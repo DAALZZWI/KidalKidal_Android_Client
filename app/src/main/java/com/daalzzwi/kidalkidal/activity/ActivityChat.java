@@ -86,7 +86,6 @@ public class ActivityChat extends AppCompatActivity {
                 View.SYSTEM_UI_FLAG_FULLSCREEN
         );
 
-        //초기화 변수
         intent = new Intent();
         intentSend = new ModelIntent();
         intentReceive = new ModelIntent();
@@ -104,7 +103,6 @@ public class ActivityChat extends AppCompatActivity {
         dataImage = new HashMap< String , Bitmap >();
         init = 0;
 
-        //초기화 메서드
         functionActivityReceive();
         functionSocketCreate();
         functionRcvSet();
