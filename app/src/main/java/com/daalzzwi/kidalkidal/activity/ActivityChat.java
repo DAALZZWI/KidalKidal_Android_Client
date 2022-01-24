@@ -169,7 +169,7 @@ public class ActivityChat extends AppCompatActivity {
 
     public void functionDialog() {
         
-        //프로필 클릭시 메뉴 레이아웃을 생성해서 띄어주는 메서드 .
+        //프로필 클릭시 메뉴 레이아웃을 생성해서 띄어주는 메서드  .
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         dialog = new Dialog( this );
