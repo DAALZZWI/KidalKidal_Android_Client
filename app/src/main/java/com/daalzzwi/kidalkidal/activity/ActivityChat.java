@@ -90,7 +90,7 @@ public class ActivityChat extends AppCompatActivity {
         intentSend = new ModelIntent();
         intentReceive = new ModelIntent();
         intentSend.setIntentFromActivity( "activityChat" );
-        intentReceive = (ModelIntent) getIntent().getSerializableExtra( "data" );
+        intentReceive = ( ModelIntent ) getIntent().getSerializableExtra( "data" );
 
         configRetrofit = getRetrofit();
         configRoomDatabase = new ConfigRoomDatabase(this );
