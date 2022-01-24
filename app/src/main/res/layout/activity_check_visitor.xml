@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ActivityCheckVisitor">
+
+    <TextView
+        android:id="@+id/tvOrderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="대기번호"
+        android:textColor="#30333A"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOrderNumberPrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="0"
+        android:textColor="#30333A"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvOrderNumberPresent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderTitle" />
+
+    <ImageView
+        android:id="@+id/ivProfilePrevious"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvOrderNumberPrevious"
+        app:layout_constraintStart_toStartOf="@+id/tvOrderNumberPrevious"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderNumberPrevious" />
+
+    <TextView
+        android:id="@+id/tvTitlePrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="이전번호"
+        android:textColor="#30333A"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ivProfilePrevious"
+        app:layout_constraintStart_toStartOf="@+id/ivProfilePrevious"
+        app:layout_constraintTop_toBottomOf="@+id/ivProfilePrevious" />
+
+    <TextView
+        android:id="@+id/tvOrderNumberPresent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="0"
+        android:textColor="#30333A"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderTitle" />
+
+    <ImageView
+        android:id="@+id/ivProfilePresent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvOrderNumberPresent"
+        app:layout_constraintStart_toStartOf="@+id/tvOrderNumberPresent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderNumberPresent" />
+
+    <TextView
+        android:id="@+id/tvTitlePresent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="현재번호"
+        android:textColor="#30333A"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ivProfilePresent"
+        app:layout_constraintStart_toStartOf="@+id/ivProfilePresent"
+        app:layout_constraintTop_toBottomOf="@+id/ivProfilePresent" />
+
+    <TextView
+        android:id="@+id/tvOrderNumberNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="0"
+        android:textColor="#30333A"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvOrderNumberPresent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderTitle" />
+
+    <ImageView
+        android:id="@+id/ivProfileNext"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvOrderNumberNext"
+        app:layout_constraintStart_toStartOf="@+id/tvOrderNumberNext"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderNumberNext" />
+
+    <TextView
+        android:id="@+id/tvTitleNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="다음번호"
+        android:textColor="#30333A"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ivProfileNext"
+        app:layout_constraintStart_toStartOf="@+id/ivProfileNext"
+        app:layout_constraintTop_toBottomOf="@+id/ivProfileNext" />
+
+    <TextView
+        android:id="@+id/tvCompanyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="업체"
+        android:textColor="#30333A"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitlePresent" />
+
+    <TextView
+        android:id="@+id/tvCompanyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="기달기달"
+        android:textColor="#30333A"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCompanyTitle" />
+
+    <Button
+        android:id="@+id/btnPrevious"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/item_title"
+        android:text="이전 번호 호출하기"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCompanyName" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/item_title"
+        android:text="다음 번호 호출하기"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCompanyName" />
+
+    <Button
+        android:id="@+id/btnMain"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="32dp"
+        android:text="메인으로 가기"
+        android:textColor="@color/white"
+        android:background="@drawable/item_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
