@@ -1,3 +1,7 @@
+// 작성자 : daalzzwi
+// 작성일자 : 2022/01/24
+// ActivityChat은 이용자가 관리자와 직접 실시간 채팅을 할 수 있는 액티비티 입니다.
+
 package com.daalzzwi.kidalkidal.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -82,6 +86,7 @@ public class ActivityChat extends AppCompatActivity {
                 View.SYSTEM_UI_FLAG_FULLSCREEN
         );
 
+        //초기화 변수
         intent = new Intent();
         intentSend = new ModelIntent();
         intentReceive = new ModelIntent();
@@ -99,6 +104,7 @@ public class ActivityChat extends AppCompatActivity {
         dataImage = new HashMap< String , Bitmap >();
         init = 0;
 
+        //초기화 메서드
         functionActivityReceive();
         functionSocketCreate();
         functionRcvSet();
@@ -143,7 +149,7 @@ public class ActivityChat extends AppCompatActivity {
     protected void onDestroy() {
 
         super.onDestroy();
-
+        
         bindingChat = null;
 
         intent = null;
@@ -164,7 +170,8 @@ public class ActivityChat extends AppCompatActivity {
     }
 
     public void functionDialog() {
-
+        
+        //프로필 클릭시 메뉴 레이아웃을 생성해서 띄어주는 메서드 .
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         dialog = new Dialog( this );
@@ -250,6 +257,7 @@ public class ActivityChat extends AppCompatActivity {
 
     public void functionUserLogout() {
 
+        //로그아웃을 실행시키는 메서드 입니다.
         webSocketClient.close();
 
         configRoomDatabase.functionToggleUpdate( new ModelToggle() );
@@ -262,6 +270,7 @@ public class ActivityChat extends AppCompatActivity {
 
     public void functionSocketCreate() {
 
+        //소켓을 생성하는 
         URI uri;
         String url = "";
         String parametersUser = "";
@@ -349,6 +358,7 @@ public class ActivityChat extends AppCompatActivity {
 
     public void functionChatSend() {
 
+        //이용자가 적은 메세지를 보내주는 메서드 입니다.
         String result = "CHAT/" + bindingChat.etMessage.getText().toString();
         bindingChat.etMessage.setText( "" );
         webSocketClient.send( result );
@@ -356,6 +366,7 @@ public class ActivityChat extends AppCompatActivity {
 
     public void functionChatApply( String message ) {
 
+        //서버에서 온 메세지를 쪼개서 타입에 맞게 분리해주는 메서드 입니다.
         ModelChat modelChat = new ModelChat();
         String type = message.split( "/" )[0];
         modelChat.setChatType( type );
@@ -457,6 +468,7 @@ public class ActivityChat extends AppCompatActivity {
 
     public void functionChatImageInit() {
 
+        //채팅방에 접속한 이용자의 모든 프로필 사진을 가져오는 메서드 입니다.
         ModelChatPayload payloadChat = new ModelChatPayload();
         Map< String , String > chatImage = new HashMap< String , String >();
 
@@ -503,6 +515,7 @@ public class ActivityChat extends AppCompatActivity {
 
     public void functionRcvSet() {
 
+        //채팅방에 띄어줄 RecyclerView를 생성하고 가져온 메세지를 띄어주는 메서드 입니다. 
         ModelChat modelChat = new ModelChat();
 
         String msg = "실시간 채팅이 시작되었습니다";
@@ -565,22 +578,26 @@ public class ActivityChat extends AppCompatActivity {
 
     public void functionShowMessage( String message ) {
 
+        //이용자에게 보여질 Toast 메세지를 띄어주는 메서드 입니다.
         Toast.makeText( getApplicationContext() , message , Toast.LENGTH_SHORT ).show();
     }
 
     public void functionShowLog( String message ) {
 
+        //로그를 찍어주는 메서드 입니다.
         Log.i( "[activityChat]" , message );
     }
 
     public void functionTitleBarSet() {
 
+        //타이틀 바에 보여질 이름과 프로필 사진을 적용시켜주는 메서드 입니다. 
         bindingChat.titleBar.tvName.setText( modelUser.getUserName() + "님!" );
         bindingChat.titleBar.ivProfile.setImageBitmap( converter.functionStringToBitmap( modelUser.getUserImage() ) );
     }
 
     public void functionActivityReceive() {
-
+        
+        //다른 액티비티에서 넘어 온 액티비티를 구분하고 로직을 지정해주는 메서드 입니다.
         switch( intentReceive.getIntentFromActivity() ) {
 
             case "activityChat" : {
@@ -622,6 +639,7 @@ public class ActivityChat extends AppCompatActivity {
 
     public void functionActivitySend() {
 
+        //다른 액티비티에서 넘어 갈 액티비티를 구분하고 로직을 지정해주는 메서드 입니다.
         switch( intentSend.getIntentToActivity() ) {
 
             case "activityChat": {
